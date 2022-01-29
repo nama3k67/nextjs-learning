@@ -1,0 +1,29 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aefff8;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.item span {
+  display: block;
+}
+
+.icon {
+  margin-right: 1rem;
+  color: #18e0d0;
+}
+
+.icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+@media (min-width: 768px) {
+  .item {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
