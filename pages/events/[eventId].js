@@ -5,6 +5,7 @@ import EventContent from "../../components/event-detail/event-content";
 import EventLogistics from "../../components/event-detail/event-logistics";
 
 import { getEventById, getFeaturedEvents } from "../../helpers/api-util";
+import Head from "next/head";
 
 const DetailEventPage = (props) => {
   // const router = useRouter();
@@ -14,14 +15,24 @@ const DetailEventPage = (props) => {
 
   if (!event) {
     return (
-      <div className="center">
-        <p>Loading...</p>
-      </div>
+      <>
+        <Head>
+          <title>{event.title}</title>
+          <meta name="description" content={event.description} />
+        </Head>
+        <div className="center">
+          <p>Loading...</p>
+        </div>
+      </>
     );
   }
 
   return (
     <>
+      <Head>
+        <title>{event.title}</title>
+        <meta name="description" content={event.description} />
+      </Head>
       <EventSummary title={event.title} />
       <EventLogistics
         date={event.date}
